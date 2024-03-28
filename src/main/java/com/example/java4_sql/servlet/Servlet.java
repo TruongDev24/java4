@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp", "/Servlet/add"})
+@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp", "/Servlet/add-sp"})
 public class Servlet extends HttpServlet {
 
     ArrayList<DanhMuc> dmuc;
@@ -68,7 +68,7 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
-        if (uri.equals("/Servlet/add")) {
+        if (uri.equals("/Servlet/add-sp")) {
             this.add(request, response);
         }
     }
