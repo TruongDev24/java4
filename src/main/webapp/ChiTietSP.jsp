@@ -27,6 +27,7 @@
         <td>Tên sản phẩm</td>
         <td>Màu sắc</td>
         <td>Size</td>
+        <td>Danh mục</td>
         <td>Giá bán</td>
         <td>Số lượng tồn</td>
         <td>Trạng thái</td>
@@ -42,6 +43,7 @@
             <td>${sp.id_sp.ten}</td>
             <td>${sp.id_MauSac.ten}</td>
             <td>${sp.id_Size.ten}</td>
+            <td>${sp.id_sp.id_danhMuc.ten_danh_muc}</td>
             <td>${sp.giaBan}</td>
             <td>${sp.soLuong}</td>
             <td>${sp.trangThai}</td>

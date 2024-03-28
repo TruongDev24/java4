@@ -16,6 +16,7 @@ import java.util.Date;
 public class SanPham {
     @Column(name = "id")
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "ma_san_pham")
     private String ma;
@@ -30,4 +31,17 @@ public class SanPham {
     @ManyToOne
     @JoinColumn(name = "id_danh_muc")
     private DanhMuc id_danhMuc;
+
+    @Override
+    public String toString() {
+        return "SanPham{" +
+                "id=" + id +
+                ", ma='" + ma + '\'' +
+                ", ten='" + ten + '\'' +
+                ", trangThai='" + trangThai + '\'' +
+                ", ngayTao=" + ngayTao +
+                ", ngaySua=" + ngaySua +
+                ", id_danhMuc=" + id_danhMuc +
+                '}';
+    }
 }

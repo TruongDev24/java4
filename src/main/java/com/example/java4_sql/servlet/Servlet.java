@@ -12,13 +12,15 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
-@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp"})
+@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp", "/Servlet/add"})
 public class Servlet extends HttpServlet {
 
     ArrayList<DanhMuc> dmuc;
     ArrayList<SanPham> spham;
     ArrayList<ChiTietSP> ct;
+    SanPhamREPO sprp = new SanPhamREPO();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
@@ -29,6 +31,8 @@ public class Servlet extends HttpServlet {
         } else if (uri.equals("/Servlet-hienthi/sanpham")) {
             spham = new SanPhamREPO().getList();
             request.setAttribute("listSP", spham);
+            dmuc = new DanhMucREPO().getList();
+            request.setAttribute("listDM", dmuc);
             request.getRequestDispatcher("/san-pham.jsp").forward(request, response);
         } else if (uri.equals("/Servlet-hienthi/ctsp")){
             ct = new ChiTietSanPhamREPO().getList();
@@ -37,7 +41,35 @@ public class Servlet extends HttpServlet {
         }
     }
 
+    private void add(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String ma = request.getParameter("maSP");
+        String ten = request.getParameter("tenSP");
+        String danhmuc = request.getParameter("dmuc");
+        String status = request.getParameter("Rdo");
+        if (request.getParameter("Rdo") == "Active") {
+            status = "Active";
+        } else if (request.getParameter("Rdo") == "Inactive") {
+            status = "Inactive";
+        }
+        SanPham spm = new SanPham();
+        spm.setMa(ma);
+        spm.setTen(ten);
+        spm.setTrangThai(status);
+        spm.setNgayTao(new Date());
+        spm.setNgaySua(new Date());
+        DanhMuc dm = new DanhMuc();
+        dm.setId(Integer.parseInt(danhmuc));
+        spm.setId_danhMuc(dm);
+
+        sprp.add(spm);
+        response.sendRedirect("/Servlet-hienthi/sanpham");
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String uri = request.getRequestURI();
+        if (uri.equals("/Servlet/add")) {
+            this.add(request, response);
+        }
     }
 }

@@ -20,6 +20,49 @@
 <div style="text-align: center; margin-top: 30px"><h2><b>Sản phẩm</b></h2></div>
 <hr>
 <br>
+<div class="row">
+    <form action="/Servlet/add" class="row g-3 needs-validation" method="post">
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput1" class="form-label">Mã sản phẩm</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="maSP" placeholder="">
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput6" class="form-label">Tên sản phẩm</label>
+            <input type="text" class="form-control" id="exampleFormControlInput6" name="tenSP" placeholder="">
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput2" class="form-label">Danh mục</label>
+            <select class="form-select" id="exampleFormControlInput2" name="dmuc" required>
+                <option selected value=""></option>
+                <c:forEach items="${listDM}" var="ldm">
+                    <option value="${ldm.id}">${ldm.ten_danh_muc}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6 col-lg-6 form-check">
+            <label class="form-label">Trạng thái</label>
+            <div style="display: flex">
+                <div class="form-check" style="margin-right: 60px">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault2" value="Active"
+                           checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Active
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault1" value="Inactive">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Inactive
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
 <table class="table table-striped-columns">
     <thead>
     <tr>
@@ -42,10 +85,10 @@
             <td>${sp.trangThai}</td>
             <td>${sp.ngayTao}</td>
             <td>${sp.ngaySua}</td>
-            <td>${sp.id_danhMuc.ten_danh_muc}</td> 
+            <td>${sp.id_danhMuc.ten_danh_muc}</td>
             <td>
                 <a href="" class="btn btn-info">Detail</a>
-                <a onclick="" class="btn btn-danger">Delete</a>
+                <a onclick="" href="/Servlet/delete-sp?id=${sp.id}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>
