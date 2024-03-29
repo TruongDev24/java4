@@ -87,7 +87,7 @@
             <td>${sp.ngaySua}</td>
             <td>${sp.id_danhMuc.ten_danh_muc}</td>
             <td>
-                <a href="" class="btn btn-info">Detail</a>
+                <a href="/Servlet/detail-sp?id=${sp.id}" class="btn btn-info">Detail</a>
                 <a onclick="" href="/Servlet/delete-sp?id=${sp.id}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
