@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: LENOVO
@@ -31,16 +32,9 @@
         <div class="col-6 col-lg-6">
             <label for="exampleFormControlInput2" class="form-label">Danh mục</label>
             <select class="form-select" id="exampleFormControlInput2" name="dmuc" required>
-<%--                <c:forEach items="${listDM}" var="ldm">--%>
-<%--                    <option value="${ldm.id}" <c:if test="${ldm.id == sanPham.DM.id}">selected</c:if>>--%>
-<%--                            ${ldm.ten_danh_muc}--%>
-<%--                    </option>--%>
-<%--                </c:forEach>--%>
-
-                <c:forEach items="${listDM}" var="dm">
-                    <option value="${dm.id}"
-                            <c:if test="${dm.id == sanPham.id}">selected </c:if>
-                    >${dm.ten_danh_muc}
+                <c:forEach items="${listDanhMuc}" var="ldm">
+                    <option value="${ldm.id}" <c:if test="${ldm.id == sanPham.id_danhMuc.id}">selected</c:if>>
+                            ${ldm.ten_danh_muc}
                     </option>
                 </c:forEach>
             </select>

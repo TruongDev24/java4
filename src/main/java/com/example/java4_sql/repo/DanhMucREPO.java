@@ -32,12 +32,11 @@ public class DanhMucREPO {
 //        session.close();
 //    }
 
-    public DanhMuc getDetail(Integer idDM) {
-        Session session = HBNConnect.getFACTORY().openSession();
-        DanhMuc dm = (DanhMuc) session.createQuery("FROM DanhMuc WHERE id = :id_1")
-                .setParameter("id_1", idDM).getSingleResult();
-        session.close();
-        return dm;
-
-    }
+//    public DanhMuc getDetail(Integer idDM) {
+//        Session session = HBNConnect.getFACTORY().openSession();
+//        DanhMuc dm = (DanhMuc) session.createQuery("FROM DanhMuc WHERE id = :id_1")
+//                .setParameter("id_1", idDM).getSingleResult();
+//        session.close();
+//        return dm;
+//    }
 }

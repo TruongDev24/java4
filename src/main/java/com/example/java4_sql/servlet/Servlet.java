@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp", "/Servlet/add-sp",
+@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi/danhmuc", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp", "/Servlet/add-sp",
         "/Servlet/update-sp", "/Servlet/delete-sp", "/Servlet/detail-sp"})
 public class Servlet extends HttpServlet {
 
@@ -27,13 +27,12 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
-        if (uri.equals("/Servlet-hienthi")) {
+        if (uri.equals("/Servlet-hienthi/danhmuc")) {
             request.setAttribute("listDM", dmuc);
             request.getRequestDispatcher("/trang-chu.jsp").forward(request, response);
         } else if (uri.equals("/Servlet-hienthi/sanpham")) {
             spham = new SanPhamREPO().getList();
             request.setAttribute("listSP", spham);
-            dmuc = new DanhMucREPO().getList();
             request.setAttribute("listDM", dmuc);
             request.getRequestDispatcher("/san-pham.jsp").forward(request, response);
         } else if (uri.equals("/Servlet-hienthi/ctsp")) {
@@ -43,6 +42,9 @@ public class Servlet extends HttpServlet {
         } else if (uri.equals("/Servlet/delete-sp")) {
             this.delete(request, response);
         } else if (uri.equals("/Servlet/detail-sp")) {
+//            for (DanhMuc dm : dmuc){
+//                System.out.println(dm);
+//            }
             this.detail(request, response);
         }
     }
@@ -51,7 +53,7 @@ public class Servlet extends HttpServlet {
         Integer id = Integer.parseInt(request.getParameter("id"));
         SanPham sm = sprp.getDetail(id);
         request.setAttribute("sanPham", sm);
-        request.setAttribute("listDM", dmuc);
+        request.setAttribute("listDanhMuc", dmuc);
         request.getRequestDispatcher("/detailSP.jsp").forward(request, response);
     }
 
@@ -88,7 +90,6 @@ public class Servlet extends HttpServlet {
         spm.setMa(ma);
         spm.setTen(ten);
         spm.setTrangThai(status);
-        spm.setNgayTao(spm.getNgayTao());
         spm.setNgaySua(new Date());
         DanhMuc dm = new DanhMuc();
         dm.setId(Integer.parseInt(danhmuc));
