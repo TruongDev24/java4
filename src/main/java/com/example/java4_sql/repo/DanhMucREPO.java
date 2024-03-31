@@ -18,25 +18,4 @@ public class DanhMucREPO {
         session.close();
         return list;
     }
-
-//    public void add(DanhMuc dmuc) {
-//        session = HBNConnect.getFACTORY().openSession();
-//        Transaction tst = session.beginTransaction();
-//        try {
-//            session.saveOrUpdate(dmuc);
-//            tst.commit();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            tst.rollback();
-//        }
-//        session.close();
-//    }
-
-//    public DanhMuc getDetail(Integer idDM) {
-//        Session session = HBNConnect.getFACTORY().openSession();
-//        DanhMuc dm = (DanhMuc) session.createQuery("FROM DanhMuc WHERE id = :id_1")
-//                .setParameter("id_1", idDM).getSingleResult();
-//        session.close();
-//        return dm;
-//    }
 }

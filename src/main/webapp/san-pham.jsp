@@ -14,9 +14,6 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body class="container">
-<%--<div style="text-align: center; color: red; margin-bottom: 30px"><h1>Đây là trang chủ</h1></div>--%>
-<%--</h1>--%>
-<%--<br/>--%>
 <div style="text-align: center; margin-top: 30px"><h2><b>Sản phẩm</b></h2></div>
 <hr>
 <br>

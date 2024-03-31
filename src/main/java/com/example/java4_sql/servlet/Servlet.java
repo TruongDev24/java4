@@ -41,9 +41,6 @@ public class Servlet extends HttpServlet {
         } else if (uri.equals("/Servlet/delete-sp")) {
             this.delete(request, response);
         } else if (uri.equals("/Servlet/detail-sp")) {
-//            for (DanhMuc dm : dmuc){
-//                System.out.println(dm);
-//            }
             this.detail(request, response);
         }
     }
@@ -84,6 +81,7 @@ public class Servlet extends HttpServlet {
         } else if (request.getParameter("Rdo") == "Inactive") {
             status = "Inactive";
         }
+
         SanPham spm = sprp.getDetail(id);
         spm.setId(id);
         spm.setMa(ma);
