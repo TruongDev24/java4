@@ -18,7 +18,7 @@
 <hr>
 <br>
 <div class="row">
-    <form action="/Servlet/update-sp" class="row g-3 needs-validation" method="post">
+    <form action="/Servlet/update-sp?id=${sanPham.id}" class="row g-3 needs-validation" method="post">
         <div class="col-6 col-lg-6">
             <label for="exampleFormControlInput1" class="form-label">Mã sản phẩm</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="maSP" value="${sanPham.ma}"

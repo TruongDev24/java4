@@ -22,7 +22,6 @@ public class Servlet extends HttpServlet {
     ArrayList<SanPham> spham;
     ArrayList<ChiTietSP> ct;
     SanPhamREPO sprp = new SanPhamREPO();
-    DanhMucREPO dmrp = new DanhMucREPO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -85,7 +84,7 @@ public class Servlet extends HttpServlet {
         } else if (request.getParameter("Rdo") == "Inactive") {
             status = "Inactive";
         }
-        SanPham spm = new SanPham();
+        SanPham spm = sprp.getDetail(id);
         spm.setId(id);
         spm.setMa(ma);
         spm.setTen(ten);
