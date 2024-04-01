@@ -50,8 +50,6 @@
     </tbody>
 </table>
 <div style="float: right">
-    <a href="" class="btn btn-outline-secondary btn-sm">Kích thước</a>
-    <a href="" class="btn btn-outline-secondary btn-sm">Màu sắc</a>
     <a href="/Servlet-hienthi/sanpham" class="btn btn-outline-secondary btn-sm">Sản phẩm</a>
     <a href="/Servlet-hienthi/ctsp" class="btn btn-outline-secondary btn-sm">Chi Tiết Sản phẩm</a>
 </div>

@@ -59,8 +59,6 @@
 </table>
 <div style="float: right">
     <a href="/Servlet-hienthi/danhmuc" class="btn btn-outline-secondary btn-sm">Danh mục</a>
-    <a href="" class="btn btn-outline-secondary btn-sm">Kích thước</a>
-    <a href="" class="btn btn-outline-secondary btn-sm">Màu sắc</a>
     <a href="/Servlet-hienthi/sanpham" class="btn btn-outline-secondary btn-sm">Sản phẩm</a>
 </div>
 </body>
