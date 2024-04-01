@@ -28,6 +28,9 @@ public class HBNConnect {
         conf.addAnnotatedClass(MauSac.class);
         conf.addAnnotatedClass(Size.class);
         conf.addAnnotatedClass(ChiTietSP.class);
+        conf.addAnnotatedClass(HoaDon.class);
+        conf.addAnnotatedClass(KhachHang.class);
+        conf.addAnnotatedClass(HoaDonChiTiet.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
         FACTORY = conf.buildSessionFactory(registry);
