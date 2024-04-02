@@ -31,14 +31,14 @@
             <label class="form-label">Trạng thái</label>
             <div style="display: flex">
                 <div class="form-check" style="margin-right: 60px">
-                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault2" value="Hoạt động"
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault2" value="Active"
                            checked>
                     <label class="form-check-label" for="flexRadioDefault2">
                         Hoạt động
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault1" value="Tạm ngưng">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault1" value="Inactive">
                     <label class="form-check-label" for="flexRadioDefault1">
                         Tạm ngưng
                     </label>

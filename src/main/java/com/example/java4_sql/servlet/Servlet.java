@@ -14,19 +14,25 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi/danhmuc", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp", "/Servlet/add-sp",
-        "/Servlet/update-sp", "/Servlet/delete-sp", "/Servlet/detail-sp"})
+@WebServlet(name = "Servlet-hienthi", value = {"/Servlet-hienthi/danhmuc", "/Servlet-hienthi/sanpham", "/Servlet-hienthi/ctsp",
+        "/Servlet/add-sp", "/Servlet/update-sp", "/Servlet/delete-sp", "/Servlet/detail-sp",
+        "/add/danhmuc", "/update/danhmuc", "/detail/danhmuc", "/delete/danhmuc",
+        "/add/ctsp", "/update/ctsp", "/detail/ctsp", "/delete/ctsp"})
 public class Servlet extends HttpServlet {
 
-    ArrayList<DanhMuc> dmuc = new DanhMucREPO().getList();
+    ArrayList<DanhMuc> dmuc;
     ArrayList<SanPham> spham;
     ArrayList<ChiTietSP> ct;
     SanPhamREPO sprp = new SanPhamREPO();
+    DanhMucREPO dmrp = new DanhMucREPO();
+    ChiTietSanPhamREPO csprp = new ChiTietSanPhamREPO();
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
         if (uri.equals("/Servlet-hienthi/danhmuc")) {
+            dmuc = new DanhMucREPO().getList();
             request.setAttribute("listDM", dmuc);
             request.getRequestDispatcher("/trang-chu.jsp").forward(request, response);
         } else if (uri.equals("/Servlet-hienthi/sanpham")) {
@@ -42,6 +48,14 @@ public class Servlet extends HttpServlet {
             this.delete(request, response);
         } else if (uri.equals("/Servlet/detail-sp")) {
             this.detail(request, response);
+        } else if (uri.equals("/detail/danhmuc")) {
+
+        } else if (uri.equals("/delete/danhmuc")) {
+
+        } else if (uri.equals("/detail/ctsp")) {
+
+        } else if (uri.equals("/delete/ctsp")) {
+
         }
     }
 
@@ -60,6 +74,14 @@ public class Servlet extends HttpServlet {
             this.add(request, response);
         } else if (uri.equals("/Servlet/update-sp")) {
             this.update(request, response);
+        } else if (uri.equals("/add/danhmuc")) {
+
+        } else if (uri.equals("/update/danhmuc")) {
+
+        } else if (uri.equals("/add/ctsp")) {
+
+        } else if (uri.equals("/update/ctsp")) {
+
         }
     }
 

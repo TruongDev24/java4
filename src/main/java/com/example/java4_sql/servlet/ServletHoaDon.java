@@ -15,17 +15,19 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "ServletHoaDon", value = {"/ServletHoaDon/HoaDon", "/ServletHoaDon/KhachHang", "/ServletHoaDon/CTHD"})
+@WebServlet(name = "ServletHoaDon", value = {"/ServletHoaDon/HoaDon", "/ServletHoaDon/KhachHang", "/ServletHoaDon/CTHD",
+        "/add/khachhang", "/update/khachhang", "/detail/khachhang", "/delete/khachhang"})
 public class ServletHoaDon extends HttpServlet {
 
     ArrayList<HoaDon> listHD = new HoaDonREPO().getList();
     ArrayList<KhachHang> listKH = new KhachHangREPO().getList();
     ArrayList<ChiTietSP> ct = new ChiTietSanPhamREPO().getList();
     ArrayList<HoaDonChiTiet> hoadonct = new hdctREPO().getList();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String uri = request.getRequestURI();
-        if(uri.equals("/ServletHoaDon/HoaDon")){
+        if (uri.equals("/ServletHoaDon/HoaDon")) {
             request.setAttribute("hoadon", listHD);
             request.setAttribute("khachhang", listKH);
             request.getRequestDispatcher("/hoa-don.jsp").forward(request, response);
@@ -37,11 +39,20 @@ public class ServletHoaDon extends HttpServlet {
             request.setAttribute("listCTSP", ct);
             request.setAttribute("listHDCT", hoadonct);
             request.getRequestDispatcher("/ct_hoadon.jsp").forward(request, response);
+        } else if (uri.equals("/detail/khachhang")) {
+
+        } else if (uri.equals("/delete/khachhang")) {
+
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String uri = request.getRequestURI();
+        if (uri.equals("/add/khachhang")) {
 
+        } else if (uri.equals("/update/khachhang")) {
+
+        }
     }
 }
