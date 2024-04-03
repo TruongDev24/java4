@@ -45,6 +45,10 @@ public class ServletMauSize extends HttpServlet {
     }
 
     private void deleteSize(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        Size s = srp.getDetail(id);
+        srp.delete(s);
+        response.sendRedirect("/ServletMauSize/Size");
     }
 
     private void detailSize(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,7 +58,11 @@ public class ServletMauSize extends HttpServlet {
         request.getRequestDispatcher("/suaSize.jsp").forward(request, response);
     }
 
-    private void deleteMau(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteMau(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        MauSac ms = mrp.getDetail(id);
+        mrp.delete(ms);
+        response.sendRedirect("/ServletMauSize/Mau");
     }
 
     private void detailMau(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -127,10 +135,10 @@ public class ServletMauSize extends HttpServlet {
         String ma = request.getParameter("ma");
         String ten = request.getParameter("ten");
         String status = request.getParameter("Rdo");
-        if (request.getParameter("Rdo") == "Hoạt động") {
-            status = "Hoạt động";
-        } else if (request.getParameter("Rdo") == "Tạm ngưng") {
-            status = "Tạm ngưng";
+        if (request.getParameter("Rdo") == "Active") {
+            status = "Active";
+        } else if (request.getParameter("Rdo") == "Inactive") {
+            status = "Inactive";
         }
 
         MauSac ms = mrp.getDetail(id);
@@ -148,10 +156,10 @@ public class ServletMauSize extends HttpServlet {
         String ma = request.getParameter("ma");
         String ten = request.getParameter("ten");
         String status = request.getParameter("Rdo");
-        if (request.getParameter("Rdo") == "Hoạt động") {
-            status = "Hoạt động";
-        } else if (request.getParameter("Rdo") == "Tạm ngưng") {
-            status = "Tạm ngưng";
+        if (request.getParameter("Rdo") == "Active") {
+            status = "Active";
+        } else if (request.getParameter("Rdo") == "Inactive") {
+            status = "Inactive";
         }
 
         MauSac ms = new MauSac();

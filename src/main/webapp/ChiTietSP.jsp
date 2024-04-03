@@ -20,6 +20,67 @@
 <div style="text-align: center; margin-top: 30px"><h2><b>Chi Tiết Sản phẩm</b></h2></div>
 <hr>
 <br>
+<div class="row">
+    <form action="/add/ctsp" class="row g-3 needs-validation" method="post">
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput1" class="form-label">Sản phẩm</label>
+            <select class="form-select" id="exampleFormControlInput1" name="idsp" required>
+                <option selected value=""></option>
+                <c:forEach items="${listSP}" var="ldm">
+                    <option value="${ldm.id}">${ldm.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput6" class="form-label">Màu sắc</label>
+            <select class="form-select" id="exampleFormControlInput6" name="idmau" required>
+                <option selected value=""></option>
+                <c:forEach items="${mau}" var="ldm">
+                    <option value="${ldm.id}">${ldm.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput2" class="form-label">Size</label>
+            <select class="form-select" id="exampleFormControlInput2" name="idsize" required>
+                <option selected value=""></option>
+                <c:forEach items="${size}" var="ldm">
+                    <option value="${ldm.id}">${ldm.ten}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput9" class="form-label">Giá bán</label>
+            <input type="number" class="form-control" id="exampleFormControlInput9" name="gia" placeholder="">
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput4" class="form-label">Sô lượng tồn</label>
+            <input type="number" class="form-control" id="exampleFormControlInput4" name="soluong" placeholder="">
+        </div>
+        <div class="col-6 col-lg-6 form-check">
+            <label class="form-label">Trạng thái</label>
+            <div style="display: flex">
+                <div class="form-check" style="margin-right: 60px">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault2" value="Active"
+                           checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Active
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault1" value="Inactive">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Inactive
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
 <table class="table table-striped-columns">
     <thead>
     <tr>
@@ -50,8 +111,8 @@
             <td>${sp.ngayTao}</td>
             <td>${sp.ngaySua}</td>
             <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a onclick="" class="btn btn-danger">Delete</a>
+                <a href="/detail/ctsp?id=${sp.id}" class="btn btn-info">Detail</a>
+                <a onclick="" href="/delete/ctsp?id=${sp.id}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>

@@ -34,13 +34,13 @@
                     <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault2" value="Active"
                            checked>
                     <label class="form-check-label" for="flexRadioDefault2">
-                        Hoạt động
+                        Active
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault1" value="Inactive">
                     <label class="form-check-label" for="flexRadioDefault1">
-                        Tạm ngưng
+                        Inactive
                     </label>
                 </div>
             </div>

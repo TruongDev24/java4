@@ -20,6 +20,40 @@
 <div style="text-align: center; margin-top: 30px"><h2><b>Danh mục</b></h2></div>
 <hr>
 <br>
+<div class="row">
+    <form action="/add/danhmuc" class="row g-3 needs-validation" method="post">
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput1" class="form-label">Mã danh mục</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="ma" placeholder="">
+        </div>
+        <div class="col-6 col-lg-6">
+            <label for="exampleFormControlInput6" class="form-label">Tên danh mục</label>
+            <input type="text" class="form-control" id="exampleFormControlInput6" name="ten" placeholder="">
+        </div>
+        <div class="col-6 col-lg-6 form-check">
+            <label class="form-label">Trạng thái</label>
+            <div style="display: flex">
+                <div class="form-check" style="margin-right: 60px">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault2" value="Active"
+                           checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Active
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="Rdo" id="flexRadioDefault1" value="Inactive">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Inactive
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-success">Save</button>
+        </div>
+    </form>
+</div>
 <table class="table table-striped-columns">
     <thead>
     <tr>
@@ -42,8 +76,8 @@
             <td>${dm.ngay_tao}</td>
             <td>${dm.ngay_sua}</td>
             <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a onclick="" class="btn btn-danger">Delete</a>
+                <a href="/detail/danhmuc?id=${dm.id}" class="btn btn-info">Detail</a>
+                <a onclick="" href="/delete/danhmuc?id=${dm.id}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>

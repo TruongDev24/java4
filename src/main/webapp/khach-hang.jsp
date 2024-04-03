@@ -18,7 +18,7 @@
 <hr>
 <br>
 <div class="row">
-    <form action="" class="row g-3 needs-validation" method="post">
+    <form action="/add/khachhang" class="row g-3 needs-validation" method="post">
         <div class="col-6 col-lg-6">
             <label for="exampleFormControlInput1" class="form-label">Họ tên</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="hoten" placeholder="">
@@ -79,8 +79,8 @@
             <td>${sp.ngayTao}</td>
             <td>${sp.ngaySua}</td>
             <td>
-                <a href="" class="btn btn-info">Detail</a>
-                <a onclick="" href="" class="btn btn-danger">Delete</a>
+                <a href="/detail/khachhang?id=${sp.id}" class="btn btn-info">Detail</a>
+                <a onclick="" href="/delêt/khachhang?id=${sp.id}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>
