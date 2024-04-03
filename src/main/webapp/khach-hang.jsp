@@ -80,7 +80,7 @@
             <td>${sp.ngaySua}</td>
             <td>
                 <a href="/detail/khachhang?id=${sp.id}" class="btn btn-info">Detail</a>
-                <a onclick="" href="/delêt/khachhang?id=${sp.id}" class="btn btn-danger">Delete</a>
+                <a onclick="" href="/delete/khachhang?id=${sp.id}" class="btn btn-danger">Delete</a>
             </td>
         </tr>
     </c:forEach>
