@@ -95,8 +95,15 @@
     </tbody>
 </table>
 <div style="float: right">
+    <a href="/ServletHoaDon/HoaDon" class="btn btn-outline-secondary btn-sm">Hóa đơn</a>
+    <a href="/ServletHoaDon/CTHD" class="btn btn-outline-secondary btn-sm">Chi Tiết Hóa Đơn</a>
+    <a href="/Servlet-hienthi/sanpham" class="btn btn-outline-secondary btn-sm">Sản phẩm</a>
+    <a href="/Servlet-hienthi/ctsp" class="btn btn-outline-secondary btn-sm">Chi Tiết Sản phẩm</a>
     <a href="/ServletHoaDon/KhachHang" class="btn btn-outline-secondary btn-sm">Khách hàng</a>
-    <a href="/ServletHoaDon/HoaDon" class="btn btn-outline-secondary btn-sm">Hóa Đơn</a>
+    <a href="/Servlet-hienthi/danhmuc" class="btn btn-outline-secondary btn-sm">Danh mục</a>
+    <a href="/ServletMauSize/Mau" class="btn btn-outline-secondary btn-sm">Màu sắc</a>
+    <a href="/ServletMauSize/Size" class="btn btn-outline-secondary btn-sm">Size</a>
+    <a href="/servletX" class="btn btn-outline-secondary btn-sm">Bán hàng</a>
 </div>
 </body>
 </html>

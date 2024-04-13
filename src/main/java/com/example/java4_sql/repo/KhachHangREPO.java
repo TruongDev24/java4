@@ -63,4 +63,12 @@ public class KhachHangREPO {
         session.close();
         return ms;
     }
+
+    public KhachHang searchKH(String sdt){
+        session = HBNConnect.getFACTORY().openSession();
+        KhachHang ms = (KhachHang) session.createQuery("from KhachHang where sdt = :sdt_1")
+                .setParameter("sdt_1", sdt).getSingleResult();
+        session.close();
+        return ms;
+    }
 }
